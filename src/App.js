@@ -78,7 +78,7 @@ function App() {
             disabled={true}
             value={imageUrl}
           />
-          <button className="bg-violet-600 h-12 p-2 text-white" onClick={copyToClipboard}>
+          <button className="bg-violet-600 h-12 p-2 text-white" onClick={copyToClipboard} disabled={imageParsed}>
             Copy Url
           </button>
         </div>
