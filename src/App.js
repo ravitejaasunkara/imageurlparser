@@ -8,6 +8,7 @@ function App() {
   const [imageUrl, setImageUrl] = useState('');
   const [imageParsed, setImageParsed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [disbaleButton,setDisableButton] = useState(true);
   const REACT_APP_CLOUDINARY_CLOUD_NAME = 'dolzys14a';
   const REACT_APP_CLOUDINARY_API_KEY = '735336388527852';
   const REACT_APP_CLOUDINARY_API_SECRET = 'HZEbnHAfHrDB6PnKUjPnzLcuaic';
@@ -35,6 +36,7 @@ function App() {
       setImageUrl(secureUrl);
       setImageParsed(true);
       setIsLoading(false);
+      setDisableButton(false);
     } catch (err) {
       console.log(err);
     }
@@ -78,7 +80,7 @@ function App() {
             disabled={true}
             value={imageUrl}
           />
-          <button className="bg-violet-600 h-12 p-2 text-white" onClick={copyToClipboard} disabled={imageParsed}>
+          <button className="bg-violet-600 h-12 p-2 text-white" onClick={copyToClipboard} disabled={disbaleButton}>
             Copy Url
           </button>
         </div>
